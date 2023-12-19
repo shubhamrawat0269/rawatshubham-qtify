@@ -1,0 +1,11 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-clr: #34C94B;
+    --dark-clr: #121212;
+    --white-clr: #FFF;
+}

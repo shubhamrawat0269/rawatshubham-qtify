@@ -1,0 +1,13 @@
+.btn {
+    background-color: var(--dark-clr);
+    color: var(--primary-clr);
+    font-size: 0.95rem;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    width: 13rem;
+    padding: 10px 16px 10px 16px;
+    text-transform: capitalize;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+}
