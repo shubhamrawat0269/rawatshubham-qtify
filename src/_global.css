@@ -4,8 +4,17 @@
     box-sizing: border-box;
 }
 
+/* font-family: 'Poppins',sans-serif; */
 :root {
     --primary-clr: #34C94B;
     --dark-clr: #121212;
     --white-clr: #FFF;
+}
+
+
+h1 {
+    font-size: 2.5rem;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    color: var(--white-clr);
 }

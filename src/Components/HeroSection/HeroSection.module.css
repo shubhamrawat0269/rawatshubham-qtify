@@ -1,0 +1,8 @@
+.heroSection {
+    background-color: var(--dark-clr);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
