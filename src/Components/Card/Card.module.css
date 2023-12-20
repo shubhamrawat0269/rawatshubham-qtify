@@ -1,8 +1,8 @@
 .cardContainer {
     background-color: var(--dark-clr);
-    /* height: 50vh; */
 }
 
 .cardName {
     font-family: 'Poppins', sans-serif;
+    height: 21px;
 }

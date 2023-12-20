@@ -32,9 +32,10 @@ const CardGrid = () => {
       <Grid
         container
         sx={{
-          margin: 1,
+          width: "95%",
           padding: 2,
-          gap: "1.5rem",
+          gap: "3rem",
+          margin: "0.5rem auto",
         }}
         columns={{ xs: 4, sm: 8, md: 12 }}
       >

@@ -3,15 +3,15 @@ import styles from "./Card.module.css";
 import { Card, CardActionArea, CardContent, Chip } from "@mui/material";
 
 const CardUI = ({ data }) => {
-  const { follows, image, title } = data;
+  const { follows, image, title,id } = data;
   return (
     <div style={{ height: "232px" }}>
-      <Card sx={{ maxWidth: "159px", borderRadius: 3 }}>
+      <Card sx={{ maxWidth: "159px", height: "205px", borderRadius: 3 }}>
         <CardActionArea>
           <figure>
             <img
               src={image}
-              alt="album"
+              alt={id}
               style={{ width: "100%", aspectRatio: 1 }}
             />
           </figure>
