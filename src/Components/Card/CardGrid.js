@@ -41,7 +41,7 @@ const CardGrid = () => {
       >
         {cardData.map((card) => (
           <Grid key={card.id}>
-            <CardUI data={card} />
+            <CardUI data={card} type={"album"} />
           </Grid>
         ))}
       </Grid>

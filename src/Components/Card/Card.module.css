@@ -6,3 +6,7 @@
     font-family: 'Poppins', sans-serif;
     height: 21px;
 }
+
+a {
+    text-decoration: none;
+}
