@@ -19,7 +19,7 @@ const Section = ({ category, data }) => {
                   className="btn"
                   onClick={() => setTopAlbumCollapse(!isTopAlbumCollapse)}
                 >
-                  Show all
+                  Show All
                 </button>
               ) : (
                 <button
@@ -65,7 +65,7 @@ const Section = ({ category, data }) => {
                   className="btn"
                   onClick={() => setNewAlbumCollapse(!isNewAlbumCollapse)}
                 >
-                  Show all
+                  Show All
                 </button>
               ) : (
                 <button
