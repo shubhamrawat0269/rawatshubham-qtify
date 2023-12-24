@@ -60,7 +60,7 @@ const Section = ({ category, data }) => {
           <div style={{ borderTop: `1px solid #34C94B`, paddingTop: 5 }}>
             <div className={styles.section}>
               <h3>{category}</h3>
-              {!isTopAlbumCollapse ? (
+              {!isNewAlbumCollapse ? (
                 <button
                   className="btn"
                   onClick={() => setNewAlbumCollapse(!isNewAlbumCollapse)}
