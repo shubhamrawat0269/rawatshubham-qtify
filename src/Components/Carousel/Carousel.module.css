@@ -1,0 +1,18 @@
+.leftNavArrow {
+    position: relative;
+    z-index: 1;
+    bottom: 145px;
+    cursor: pointer;
+}
+
+.rightNavArrow {
+    position: relative;
+    z-index: 1;
+    bottom: 145px;
+    left: 95%;
+    cursor: pointer;
+}
+
+.disableIcon{
+    display: none;
+}

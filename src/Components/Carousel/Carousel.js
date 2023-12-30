@@ -1,52 +1,55 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/bundle";
 import { Navigation } from "swiper/modules";
 
 import CardUI from "../Card/CardUI";
+import LeftNavBtn from "./LeftNavBtn";
+import RightNavBtn from "./RightNavBtn";
 
 const Carousel = ({ data }) => {
+  const [swiperIndex, setSwiperIndex] = useState(0);
   return (
     <Swiper
       slidesPerView={7}
       breakpoints={{
-        576: {
-          width: 576,
+        345: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        640: {
           slidesPerView: 3,
+          spaceBetween: 20,
         },
         768: {
-          width: 768,
           slidesPerView: 4,
+          spaceBetween: 40,
         },
-        998: {
-          width: 998,
-          slidesPerView: 6,
-        },
-        1200: {
-          width: 1200,
-          slidesPerView: 6,
+        1024: {
+          slidesPerView: 5,
+          spaceBetween: 50,
         },
         1400: {
-          width: 1400,
           slidesPerView: 7,
-        },
-        1600: {
-          width: 1500,
-          slidesPerView: 7,
+          spaceBetween: 50,
         },
       }}
       modules={[Navigation]}
-      navigation
       pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
       className="swiper"
+      onActiveIndexChange={(swiperCore) => {
+        setSwiperIndex(swiperCore.activeIndex);
+      }}
     >
+      <LeftNavBtn slideIndex={swiperIndex} />
       {data.map((card) => (
         <SwiperSlide>
           <CardUI data={card} type={"album"} />
         </SwiperSlide>
       ))}
+      <RightNavBtn slideIndex={swiperIndex} numOfCards={data.length - 8} />
     </Swiper>
   );
 };
