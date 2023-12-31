@@ -31,7 +31,7 @@ const Section = ({ category, data }) => {
               )}
             </div>
 
-            {!isTopAlbumCollapse ? (
+            {isTopAlbumCollapse ? (
               <Carousel data={data} />
             ) : (
               <Grid
@@ -76,7 +76,7 @@ const Section = ({ category, data }) => {
                 </button>
               )}
             </div>
-            {!isNewAlbumCollapse ? (
+            {isNewAlbumCollapse ? (
               <Carousel data={data} />
             ) : (
               <Grid
