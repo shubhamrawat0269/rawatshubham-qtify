@@ -31,7 +31,7 @@ h4 {
     margin: 0.15rem 0;
 }
 
-.btn{
+.btn {
     cursor: pointer;
 }
 
@@ -41,9 +41,12 @@ h4 {
    ============= **/
 
 .swiper {
-    margin: 1rem 5rem !important;
+    margin: 1rem 4rem !important;
 }
 
+.swiper-wrapper {
+    padding: 0 1rem !important;
+}
 
 .swiper-button-next,
 .swiper-button-prev {
