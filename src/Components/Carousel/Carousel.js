@@ -9,7 +9,7 @@ import CardUI from "../Card/CardUI";
 import LeftNavBtn from "./LeftNavBtn";
 import RightNavBtn from "./RightNavBtn";
 
-const Carousel = ({ data }) => {
+const Carousel = ({ data, type }) => {
   const [showRightNavBtn, setShowRightNavBtn] = useState(true);
   const [showLeftNavBtn, setShowLeftNavBtn] = useState(false);
 
@@ -54,7 +54,7 @@ const Carousel = ({ data }) => {
     >
       {data.map((card) => (
         <SwiperSlide>
-          <CardUI data={card} type={"album"} />
+          <CardUI data={card} type={type} />
         </SwiperSlide>
       ))}
       <div className={styles.navBtns}>

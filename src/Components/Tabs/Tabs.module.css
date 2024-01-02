@@ -1,0 +1,10 @@
+.tabsContainer {
+    width: 90% !important;
+    margin: 0 auto !important;
+}
+
+button {
+    padding: 0.5rem 0 !important;
+    color: var(--white-clr) !important;
+    text-transform: capitalize !important;
+}

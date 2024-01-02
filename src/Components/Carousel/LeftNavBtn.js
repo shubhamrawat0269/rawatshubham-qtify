@@ -4,7 +4,6 @@ import { useSwiper } from "swiper/react";
 
 const LeftNavBtn = ({ show }) => {
   const swiper = useSwiper();
-  console.log(show);
   return (
     <>
       <svg

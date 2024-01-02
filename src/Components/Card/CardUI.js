@@ -4,36 +4,34 @@ import { Tooltip } from "@mui/material";
 import { Card, CardActionArea, CardContent, Chip } from "@mui/material";
 
 const CardUI = ({ data, type }) => {
+  
   const getCardBasedType = (type) => {
-    // const { follows, image, title, id, songs } = data;
     switch (type) {
       case "songs": {
-        const { follows, image, title, id, songs } = data;
+        const { image, title, id, likes } = data;
         return (
-          <Tooltip title={`${songs.length} songs`} placement="top" arrow="true">
-            <div style={{ height: "232px" }}>
-              <Card
-                sx={{ maxWidth: "159px", height: "205px", borderRadius: 3 }}
-              >
-                <CardActionArea>
-                  <figure>
-                    <img
-                      src={image}
-                      alt={id}
-                      style={{ width: "100%", aspectRatio: 1 }}
-                    />
-                  </figure>
-                  <CardContent style={{ padding: "0.3rem" }}>
-                    <Chip
-                      label={`${follows} Follows`}
-                      style={{ background: "#121212", color: "#FFF" }}
-                    />
-                  </CardContent>
-                </CardActionArea>
-              </Card>
-              <h4 className={styles.cardName}>{title}</h4>
-            </div>
-          </Tooltip>
+          // <Tooltip title={`${songs.length} songs`} placement="top" arrow="true">
+          <div style={{ height: "232px" }}>
+            <Card sx={{ maxWidth: "159px", height: "205px", borderRadius: 3 }}>
+              <CardActionArea>
+                <figure>
+                  <img
+                    src={image}
+                    alt={id}
+                    style={{ width: "100%", aspectRatio: 1 }}
+                  />
+                </figure>
+                <CardContent style={{ padding: "0.3rem" }}>
+                  <Chip
+                    label={`${likes} likes`}
+                    style={{ background: "#121212", color: "#FFF" }}
+                  />
+                </CardContent>
+              </CardActionArea>
+            </Card>
+            <h4 className={styles.cardName}>{title}</h4>
+          </div>
+          // </Tooltip>
         );
       }
 

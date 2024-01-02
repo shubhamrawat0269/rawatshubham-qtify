@@ -3,7 +3,8 @@ import styles from "./Section.module.css";
 import { Grid } from "@mui/material";
 import CardUI from "../Card/CardUI";
 import Carousel from "../Carousel/Carousel";
-const Section = ({ category, data }) => {
+import TabSection from "../Tabs/TabSection";
+const Section = ({ category, data, tabTitle, setTabTitle }) => {
   const [isTopAlbumCollapse, setTopAlbumCollapse] = useState(true);
   const [isNewAlbumCollapse, setNewAlbumCollapse] = useState(true);
 
@@ -32,7 +33,7 @@ const Section = ({ category, data }) => {
             </div>
 
             {isTopAlbumCollapse ? (
-              <Carousel data={data} />
+              <Carousel data={data} type={"album"} />
             ) : (
               <Grid
                 container
@@ -77,7 +78,7 @@ const Section = ({ category, data }) => {
               )}
             </div>
             {isNewAlbumCollapse ? (
-              <Carousel data={data} />
+              <Carousel data={data} type={"album"} />
             ) : (
               <Grid
                 container
@@ -96,6 +97,18 @@ const Section = ({ category, data }) => {
                 ))}
               </Grid>
             )}
+          </div>
+        );
+      }
+
+      case "Songs": {
+        return (
+          <div style={{ borderTop: `1px solid #34C94B`, paddingTop: 5 }}>
+            <div className={styles.section}>
+              <h3>{category}</h3>
+            </div>
+            <TabSection title={tabTitle} dispatch={setTabTitle} />
+            <Carousel data={data} type={"songs"} />
           </div>
         );
       }

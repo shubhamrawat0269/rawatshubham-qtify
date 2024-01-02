@@ -11,6 +11,10 @@
     --white-clr: #FFF;
 }
 
+body {
+    background-color: var(--dark-clr);
+}
+
 h1,
 h2 {
     font-family: 'Poppins', sans-serif;
