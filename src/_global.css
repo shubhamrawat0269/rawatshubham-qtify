@@ -47,29 +47,3 @@ h4 {
 .swiper-wrapper {
     padding: 0 1rem !important;
 }
-
-.swiper-button-next,
-.swiper-button-prev {
-    position: absolute !important;
-    top: 50% !important;
-    width: 2rem !important;
-    height: 2rem !important;
-    z-index: 10 !important;
-    cursor: pointer !important;
-    border-radius: 50%;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    color: var(--white-clr) !important;
-    background-color: var(--primary-clr) !important;
-}
-
-.swiper-button-next:after,
-.swiper-button-prev:after {
-    font-size: 1rem !important;
-}
-
-.swiper-button-prev.swiper-button-disabled,
-.swiper-button-next.swiper-button-disabled {
-    visibility: hidden !important;
-}
