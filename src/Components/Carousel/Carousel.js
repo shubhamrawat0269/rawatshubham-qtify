@@ -3,13 +3,24 @@ import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/bundle";
 import { Navigation } from "swiper/modules";
+import styles from "./Carousel.module.css";
 
 import CardUI from "../Card/CardUI";
 import LeftNavBtn from "./LeftNavBtn";
 import RightNavBtn from "./RightNavBtn";
 
 const Carousel = ({ data }) => {
-  const [swiperIndex, setSwiperIndex] = useState(0);
+  const [showRightNavBtn, setShowRightNavBtn] = useState(true);
+  const [showLeftNavBtn, setShowLeftNavBtn] = useState(false);
+
+  const handleSwiper = (swiper) => {
+    swiper.on("slideChange", () => {
+      const isLastCard = swiper.isEnd;
+      const isStartCard = swiper.isBeginning;
+      setShowRightNavBtn(!isLastCard);
+      setShowLeftNavBtn(!isStartCard);
+    });
+  };
   return (
     <Swiper
       slidesPerView={7}
@@ -39,17 +50,17 @@ const Carousel = ({ data }) => {
       pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
       className="swiper"
-      onActiveIndexChange={(swiperCore) => {
-        setSwiperIndex(swiperCore.activeIndex);
-      }}
+      onSwiper={handleSwiper}
     >
-      <LeftNavBtn slideIndex={swiperIndex} />
       {data.map((card) => (
         <SwiperSlide>
           <CardUI data={card} type={"album"} />
         </SwiperSlide>
       ))}
-      <RightNavBtn slideIndex={swiperIndex} numOfCards={data.length - 8} />
+      <div className={styles.navBtns}>
+        <LeftNavBtn show={showLeftNavBtn} />
+        <RightNavBtn show={showRightNavBtn} />
+      </div>
     </Swiper>
   );
 };

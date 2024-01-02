@@ -1,18 +1,23 @@
-.leftNavArrow {
-    position: relative;
-    z-index: 1;
-    bottom: 145px;
+.leftNavArrow,
+.rightNavArrow {
     cursor: pointer;
 }
 
-.rightNavArrow {
-    position: relative;
+.navBtns {
+    width: 100%;
+    /* background-color: red; */
+    position: absolute;
     z-index: 1;
-    bottom: 145px;
-    left: 95%;
-    cursor: pointer;
+    top: 38%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
+
 
 .disableIcon {
-    display: none;
+    visibility: hidden;
+    pointer-events: none;
+    opacity: 0;
 }
