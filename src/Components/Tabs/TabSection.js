@@ -34,9 +34,11 @@ const TabSection = ({ title, dispatch }) => {
         className={styles.tabsContainer}
         TabIndicatorProps={{ style: { background: "#34C94B" } }}
       >
-        <Tab value={"all"} label={"all"} />;
+        <Tab className={styles.tabBtn} value={"all"} label={"all"} />;
         {tabs.map((tab) => {
-          return <Tab value={tab.key} label={tab.label} />;
+          return (
+            <Tab className={styles.tabBtn} value={tab.key} label={tab.label} />
+          );
         })}
       </Tabs>
     </Box>
