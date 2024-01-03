@@ -3,6 +3,7 @@ import "./_global.css";
 import Navbar from "./Components/Navbar/Navbar";
 import HeroSection from "./Components/HeroSection/HeroSection";
 import CardGrid from "./Components/Card/CardGrid";
+import FAQ from "./Components/FAQ/FAQ";
 
 const App = () => {
   return (
@@ -10,6 +11,7 @@ const App = () => {
       <Navbar />
       <HeroSection />
       <CardGrid />
+      <FAQ />
     </div>
   );
 };
