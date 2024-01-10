@@ -4,6 +4,7 @@ import { Grid } from "@mui/material";
 import CardUI from "../Card/CardUI";
 import Carousel from "../Carousel/Carousel";
 import TabSection from "../Tabs/TabSection";
+import ShimmerComp from "../ShimmerComp/ShimmerComp";
 const Section = ({ category, data, tabTitle, setTabTitle }) => {
   const [isTopAlbumCollapse, setTopAlbumCollapse] = useState(true);
   const [isNewAlbumCollapse, setNewAlbumCollapse] = useState(true);
@@ -33,7 +34,11 @@ const Section = ({ category, data, tabTitle, setTabTitle }) => {
             </div>
 
             {isTopAlbumCollapse ? (
-              <Carousel data={data} type={"album"} />
+              !data.length ? (
+                <ShimmerComp />
+              ) : (
+                <Carousel data={data} type={"album"} auto />
+              )
             ) : (
               <Grid
                 container
@@ -78,7 +83,11 @@ const Section = ({ category, data, tabTitle, setTabTitle }) => {
               )}
             </div>
             {isNewAlbumCollapse ? (
-              <Carousel data={data} type={"album"} />
+              !data.length ? (
+                <ShimmerComp />
+              ) : (
+                <Carousel data={data} type={"album"} auto />
+              )
             ) : (
               <Grid
                 container
@@ -108,7 +117,11 @@ const Section = ({ category, data, tabTitle, setTabTitle }) => {
               <h3>{category}</h3>
             </div>
             <TabSection title={tabTitle} dispatch={setTabTitle} />
-            <Carousel data={data} type={"songs"} />
+            {!data.length ? (
+              <ShimmerComp />
+            ) : (
+              <Carousel data={data} type={"songs"} />
+            )}
           </div>
         );
       }

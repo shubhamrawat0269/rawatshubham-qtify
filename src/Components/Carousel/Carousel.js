@@ -2,14 +2,15 @@ import React, { useState } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/bundle";
-import { Navigation } from "swiper/modules";
+import "swiper/css/autoplay";
+import { Navigation, Autoplay } from "swiper/modules";
 import styles from "./Carousel.module.css";
 
 import CardUI from "../Card/CardUI";
 import LeftNavBtn from "./LeftNavBtn";
 import RightNavBtn from "./RightNavBtn";
 
-const Carousel = ({ data, type }) => {
+const Carousel = ({ data, type, auto = false }) => {
   const [showRightNavBtn, setShowRightNavBtn] = useState(true);
   const [showLeftNavBtn, setShowLeftNavBtn] = useState(false);
 
@@ -24,6 +25,11 @@ const Carousel = ({ data, type }) => {
   return (
     <Swiper
       slidesPerView={7}
+      autoplay={
+        auto && {
+          delay: 1500,
+        }
+      }
       breakpoints={{
         345: {
           slidesPerView: 2,
@@ -46,7 +52,7 @@ const Carousel = ({ data, type }) => {
           spaceBetween: 50,
         },
       }}
-      modules={[Navigation]}
+      modules={[Navigation, Autoplay]}
       pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
       className="swiper"

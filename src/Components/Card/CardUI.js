@@ -10,7 +10,6 @@ const CardUI = ({ data, type }) => {
       case "songs": {
         const { image, title, id, likes } = data;
         return (
-          // <Tooltip title={`${songs.length} songs`} placement="top" arrow="true">
           <div style={{ height: "232px" }}>
             <Card sx={{ maxWidth: "159px", height: "205px", borderRadius: 3 }}>
               <CardActionArea>
@@ -31,7 +30,6 @@ const CardUI = ({ data, type }) => {
             </Card>
             <h4 className={styles.cardName}>{title}</h4>
           </div>
-          // </Tooltip>
         );
       }
 
