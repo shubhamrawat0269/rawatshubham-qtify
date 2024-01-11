@@ -2,17 +2,14 @@ import React, { useEffect, useState } from "react";
 import styles from "./Card.module.css";
 import Section from "../Section/Section";
 import axios from "axios";
+import { endpoint } from "../../utils/Namespaces";
+
 const CardGrid = () => {
   const [cardData, setCardData] = useState([]);
   const [originalSongsList, setOriginalPlaylist] = useState([]);
   const [songsData, setSongsData] = useState([]);
   const [tabTitle, setTabTitle] = useState("all");
   const [newAlbumData, setNewAlbumData] = useState([]);
-
-  const endpoint = `https://qtify-backend-labs.crio.do`;
-
-  // fetching Card Data
-  // follows, image, id, title, description, slug, songs : [array] ..
 
   const getTopAlbumData = async () => {
     try {
@@ -30,7 +27,6 @@ const CardGrid = () => {
   const getNewAlbumData = async () => {
     try {
       const response = await axios.get(`${endpoint}/albums/new`);
-      let songsResponse = await axios.get(`${endpoint}/songs`);
       setNewAlbumData(response.data);
     } catch (error) {
       console.log(error);
@@ -42,7 +38,7 @@ const CardGrid = () => {
     let songsList = originalSongsList.filter((lib) => lib.genre.key === tab);
     setSongsData(songsList);
   };
-  
+
   useEffect(() => {
     getTopAlbumData();
     getNewAlbumData();

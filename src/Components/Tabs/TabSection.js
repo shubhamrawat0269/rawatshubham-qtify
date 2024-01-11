@@ -2,13 +2,12 @@ import { Tab, Tabs, Box } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import styles from "./Tabs.module.css";
 import axios from "axios";
+import { endpoint } from "../../utils/Namespaces";
 
 const TabSection = ({ title, dispatch }) => {
   const [tabs, setTabs] = useState([]);
-  const endpoint = `https://qtify-backend-labs.crio.do`;
 
   const handleChangeTabEvent = (e, newValue) => {
-    // console.log(newValue);
     dispatch(newValue);
   };
 

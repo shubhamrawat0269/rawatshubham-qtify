@@ -1,6 +1,5 @@
 import axios from "axios";
-
-const endpoint = `https://qtify-backend-labs.crio.do`;
+import { endpoint } from "../utils/Namespaces";
 
 export const getTopAlbums = async () => {
   try {
@@ -20,4 +19,4 @@ export const getNewAlbums = async () => {
     console.log(error);
     return null;
   }
-}
+};
