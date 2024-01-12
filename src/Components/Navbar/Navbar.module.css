@@ -47,3 +47,62 @@
     cursor: pointer;
     font-size: 20px;
 }
+
+.suggestionBox {
+    position: absolute;
+    z-index: 100;
+    top: 9.15%;
+    left: 28%;
+    width: 600px;
+    max-height: 300px;
+    overflow-y: auto;
+    background-color: #161617;
+    box-shadow: inset 0 0 5px black;
+    border-top-color: #161617;
+    border-bottom-left-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+}
+
+.suggestionInnerBox {
+    gap: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 0.35rem 0.5rem;
+    transition: all 0.3s linear;
+}
+
+.suggestionInnerBox:hover {
+    background-color: #333330;
+
+}
+
+.songdetailBox {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.artistName {
+    font-family: 'Poppins';
+    font-size: 0.6rem;
+    margin-right: 0.35rem;
+    color: var(--white-clr);
+}
+
+.songTitle {
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.likeCount {
+    font-family: 'Poppins';
+    font-size: 0.85rem;
+    color: var(--white-clr);
+}
+
+.songImg {
+    width: 2.85rem;
+    aspect-ratio: 1;
+}
