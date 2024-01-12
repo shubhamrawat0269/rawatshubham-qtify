@@ -72,6 +72,16 @@
     transition: all 0.3s linear;
 }
 
+.noSuggestionBox {
+    cursor: pointer;
+    display: flex;
+    color: silver;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    transition: all 0.3s linear;
+}
+
 .suggestionInnerBox:hover {
     background-color: #333330;
 

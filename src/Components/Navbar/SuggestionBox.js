@@ -1,8 +1,13 @@
 import React from "react";
 import styles from "./Navbar.module.css";
-const SuggestionBox = ({ data }) => {
+
+const NoSuggestionBox = () => (
+  <div className={styles.noSuggestionBox}>No Result Found ...</div>
+);
+
+const SuggestionBar = ({ data }) => {
   return (
-    <div className={styles.suggestionBox}>
+    <>
       {data.map((songdetail, id) => {
         return (
           <div className={styles.suggestionInnerBox} key={id}>
@@ -25,6 +30,14 @@ const SuggestionBox = ({ data }) => {
           </div>
         );
       })}
+    </>
+  );
+};
+
+const SuggestionBox = ({ data }) => {
+  return (
+    <div className={styles.suggestionBox}>
+      {!data.length ? <NoSuggestionBox /> : <SuggestionBar data={data} />}
     </div>
   );
 };
