@@ -2,9 +2,9 @@ import React from "react";
 import styles from "./Card.module.css";
 import { Tooltip } from "@mui/material";
 import { Card, CardActionArea, CardContent, Chip } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const CardUI = ({ data, type }) => {
-  
   const getCardBasedType = (type) => {
     switch (type) {
       case "songs": {
@@ -37,7 +37,7 @@ const CardUI = ({ data, type }) => {
         const { follows, image, title, id, songs, slug } = data;
         return (
           <Tooltip title={`${songs.length} songs`} placement="top" arrow="true">
-            <a href={`/album/${slug}`}>
+            <Link to={`/album/${slug}`}>
               <div style={{ height: "232px" }}>
                 <Card
                   sx={{ maxWidth: "159px", height: "205px", borderRadius: 3 }}
@@ -60,7 +60,7 @@ const CardUI = ({ data, type }) => {
                 </Card>
                 <h4 className={styles.cardName}>{title}</h4>
               </div>
-            </a>
+            </Link>
           </Tooltip>
         );
       }
